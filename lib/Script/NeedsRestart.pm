@@ -3,7 +3,7 @@ package Script::NeedsRestart;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 our $logger;
 our $SLEEP_BEFORE_RESTART = 2;
 
