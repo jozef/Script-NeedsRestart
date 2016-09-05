@@ -3,7 +3,7 @@ package Script::NeedsRestart;
 use warnings;
 use strict;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 our $logger;
 our $SLEEP_BEFORE_RESTART = 2;
 
@@ -28,7 +28,7 @@ sub check_mtimes {
 
     my @files_to_check = ($0, values(%INC));
     foreach my $file (@files_to_check) {
-        if ((-f $file) && (-M $file < 0)) {
+        if ((-f $file) && (-M $file <= 0)) {
             $self->_log
                 && $self->_log->info('file ' . $file . ' modified');
             return $file;

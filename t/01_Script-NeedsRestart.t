@@ -22,7 +22,9 @@ subtest 'check_mtimes' => sub {
     ok(!Script::NeedsRestart->check_mtimes, 'no need for restart yet');
 
     require_dummy_file();
-    ok(Script::NeedsRestart->check_mtimes, 'restart needed');
+    ok(Script::NeedsRestart->check_mtimes, 'restart needed if started within the same second as a file was changed');
+    sleep(2);
+    ok(Script::NeedsRestart->check_mtimes, 'restart still needed after 2s');
 };
 
 subtest 'restart_if_needed' => sub {
@@ -38,7 +40,6 @@ subtest 'restart_if_needed' => sub {
 done_testing();
 
 sub require_dummy_file {
-    sleep(1);    # needs for -M to have non-zero value
     my ($fh, $tmp_required_filename) = tempfile();
     print $fh '1;';
     close($fh);
