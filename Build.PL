@@ -10,6 +10,7 @@ my $build = Module::Build->new(
         'Test::More'      => 0,
         'Test::Exception' => 0,
         'File::Temp'      => 0,
+        'List::MoreUtils' => 0,
     },
     configure_requires  => { 'Module::Build' => '0.38' },
     dist_author         => 'Jozef Kutej <jkutej@cpan.org>',

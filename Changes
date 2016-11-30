@@ -1,8 +1,12 @@
-0.03 Sep 5 Sep 21:07:01 CEST 2016
+0.04 Now 30 21:07:01 CEST 2016
+    - no @INC duplicates
+    - TODO allow possibility to add extra files (like config files) to watch
+
+0.03 Sep 5 21:07:01 CEST 2016
     - check_mtimes true also when mtime and execution second are the same
 
-0.02 Sep 4 Sep 03:02:38 CEST 2016
+0.02 Sep 4 03:02:38 CEST 2016
     - added missing build dependencies
 
-0.01 Sep 4 Sep 03:02:38 CEST 2016
+0.01 Sep 4 03:02:38 CEST 2016
     - initial release

@@ -3,11 +3,13 @@ package Script::NeedsRestart;
 use warnings;
 use strict;
 
+use List::MoreUtils qw(uniq);
+
 our $VERSION = '0.03';
 our $logger;
 our $SLEEP_BEFORE_RESTART = 2;
 
-our @exec_self_cmd = ($^X, (map {'-I' . $_} @INC), $0, @ARGV);
+our @exec_self_cmd = ($^X, (map {'-I' . $_} uniq(@INC)), $0, @ARGV);
 
 sub _log {return $logger;}
 sub set_logger {$logger = $_[1];}
