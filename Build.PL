@@ -17,8 +17,8 @@ my $build = Module::Build->new(
     add_to_cleanup      => [ 'Script-NeedsRestart-*' ],
     meta_merge => {
         resources => {
-            repository => 'http://github.com/meon/Script-NeedsRestart',
-            bugtracker => 'http://github.com/meon/Script-NeedsRestart/issues',
+            repository => 'http://github.com/jozef/Script-NeedsRestart',
+            bugtracker => 'http://github.com/jozef/Script-NeedsRestart/issues',
         },
         keywords => [ qw/ script exec watch modified / ],
     },
